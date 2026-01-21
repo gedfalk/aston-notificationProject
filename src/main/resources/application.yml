@@ -14,5 +14,19 @@ spring:
         spring.json.use.type.headers: false
         spring.json.value.default.type: dev.gedfalk.notificationservice.dto.UserEventDto
 
+  mail:
+    host: localhost
+    port: 3025
+    protocol: smtp
+    default-encoding: UTF-8
+    properties:
+      mail:
+        debug: true
+        smtp:
+          auth: false
+          starttls:
+            enable: false
+          connectiontimeout: 5000
+
 server:
   port: 8082

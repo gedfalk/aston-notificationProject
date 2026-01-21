@@ -22,7 +22,6 @@ public class UserEventConsumer {
         try {
             log.info("получили из Кафки event");
             emailService.sendNotificationEmail(event);
-            log.info("Email был предположительно успешно отправлен");
         } catch (Exception e) {
             log.error("Ну фигня какая-то", e);
         }
