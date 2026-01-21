@@ -31,4 +31,23 @@ public class EmailService {
             log.error("Ошибка при отправке письма", e);
         }
     }
+
+    public void sendCustomEmail(String emailTo, String subject, String msg) {
+        try {
+            SimpleMailMessage message = new SimpleMailMessage();
+            message.setTo(emailTo);
+            message.setSubject(subject);
+            message.setText(msg);
+
+            log.info("emailTo {}", emailTo);
+            log.info("Отправляю письмо через API...");
+
+            mailSender.send(message);
+
+            log.info("Письмо через API успешно отправлено!");
+
+        } catch (Exception e) {
+            log.error("Ошибка при отправке письма через API", e);
+        }
+    }
 }
